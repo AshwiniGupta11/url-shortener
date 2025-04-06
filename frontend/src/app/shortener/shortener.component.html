@@ -1,0 +1,20 @@
+<div class="container">
+    <h2>URL Shortener</h2>
+    
+    <form (ngSubmit)="shortenUrl()">
+      <input
+        type="text"
+        [(ngModel)]="originalUrl"
+        name="url"
+        placeholder="Enter a long URL"
+        required
+      />
+      <button type="submit">Shorten</button>
+    </form>
+  
+    <div *ngIf="shortUrl">
+      <p>Short URL:</p>
+      <a [href]="shortUrl" target="_blank">{{ shortUrl }}</a>
+    </div>
+  </div>
+  
